@@ -3,29 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   simple_debugs.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvaldeta <user@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: bcosters <bcosters@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 12:05:47 by bcosters          #+#    #+#             */
-/*   Updated: 2021/02/24 15:07:21 by mvaldeta         ###   ########.fr       */
+/*   Updated: 2021/02/28 14:28:02 by bcosters         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void debug(const char *s, char *name)
-{
-    write(1, name, ft_strlen(name));
-    write(1, "\t", 1);
-    write(1, "DEBUG:\t", 7);
-    write(1, s, ft_strlen(s));
-    write(1, "\n", 1);
-    write(1, "[DEBUG]\n", 8);
-}
-void ft_putchar(char c)
+/*
+**  Helper functions
+*/
+
+static void ft_putchar(char c)
 {
     write(1, &c, 1);
 }
-void ft_putnbr(int nb)
+static void ft_putnbr(int nb)
 {
     if (nb < 0)
     {
@@ -42,9 +37,38 @@ void ft_putnbr(int nb)
         ft_putchar(nb + '0');
     }
 }
-void debug_number(int i)
+
+static size_t	ft_strlen(const char *str)
 {
-    write(1, "Number:\t", ft_strlen("Number:\t"));
+	size_t	i;
+
+	i = 0;
+	while (*str++)
+		i++;
+	return (i);
+}
+
+/*
+**  Debug functions
+*/
+
+void debug_str(const char *s, char *name)
+{
+    write(1, "DEBUG_STR OF:\t", 14);
+    write(1, name, ft_strlen(name));
+    write(1, ":\t", 2);
+    write(1, "\"", 1);
+    write(1, s, ft_strlen(s));
+    write(1, "\"", 1);
+    write(1, "\n[END OF DEBUG_STR]\n", 20);
+}
+void debug_number(int i, char *name)
+{
+    write(1, "DEBUG_NBR OF:\t", 14);
+    write(1, name, ft_strlen(name));
+    write(1, ":\t", ft_strlen(":\t"));
+    write(1, "\"", 1);
     ft_putnbr(i);
-    write(1, "\n", 1);
+    write(1, "\"", 1);
+    write(1, "\n[END OF DEBUG_NBR]\n", 20);
 }
