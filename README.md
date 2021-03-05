@@ -18,5 +18,5 @@ This repo contains some simple but very helpful tools for debugging your code.
 ### Halp I still don't know how to debug my code!
 `man RTFM`
 ### Shoutouts
-Shoutout to **Rostyslav Druzhchenko** for the leak checker gist
-Go give him a star! [His leak checker gist](https://gist.github.com/drrost/221b95f440b27514fc3537faa84d3c59)
+- Shoutout to **Rostyslav Druzhchenko** for the leak checker gist
+- Go give him a star! [His leak checker gist](https://gist.github.com/drrost/221b95f440b27514fc3537faa84d3c59)
