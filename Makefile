@@ -6,7 +6,7 @@
 #    By: bcosters <bcosters@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 10:32:48 by bcosters          #+#    #+#              #
-#    Updated: 2021/09/20 11:45:58 by bcosters         ###   ########.fr        #
+#    Updated: 2021/09/20 11:48:36 by bcosters         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ $(NAME):	$(OBJDR) $(OBJS) $(HEADER)
 			@printf "]\n"
 			@echo
 			@echo "Add the following flags to link the library:"
-			@echo "-lmlc -L/PathToThisRepo/"
+			@echo "-lmlc -LPathToThisRepo/"
 			@echo "And add the 'PathToThisRepo/malloc_leak_checker.h' to your main"
 
 $(OBJDR):
