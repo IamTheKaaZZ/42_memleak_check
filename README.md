@@ -13,6 +13,10 @@ This repo contains some simple but very helpful tools for debugging your code.
 2. Now you can link the library in your Makefile
 3. And you can add `check_leaks();` to the end of your main
 
+## Example output when a memory leak is caught:
+
+![Example output when there is a memory leak](Example_output.png "Example output in case of memory leaks")
+> Here there is a clear memory leak that start in the "get_commands" function (either memory that doesn't get free'd at the end or something else ...)
 ## Some helpful links to practice the fine art of RTFM
 
 1. Ever wondered what the difference is between SEGFAULT and BUS error?
