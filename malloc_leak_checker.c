@@ -6,7 +6,7 @@
 /*   By: bcosters <bcosters@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 10:31:57 by bcosters          #+#    #+#             */
-/*   Updated: 2021/09/20 11:01:01 by bcosters         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:40:29 by bcosters         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 // Created by Rostyslav Druzhchenko on 05.09.2020.
 //
 #include "malloc_leak_checker.h"
+
+g_malloc_counter = 0;
 
 // ================================== PUBLIC ==================================
 

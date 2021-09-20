@@ -6,7 +6,7 @@
 /*   By: bcosters <bcosters@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 10:34:23 by bcosters          #+#    #+#             */
-/*   Updated: 2021/09/20 11:04:41 by bcosters         ###   ########.fr       */
+/*   Updated: 2021/09/20 11:40:46 by bcosters         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <string.h>
 # include <stdlib.h>
 
-int			g_malloc_counter = 0;
+extern int	g_malloc_counter;
 
 # define LINE_LEN 1024
 
