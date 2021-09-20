@@ -5,6 +5,7 @@ This repo contains some simple but very helpful tools for debugging your code.
 ## Current debug functions
 
 `check_leaks()`
+> NOW NORMINETTE SAFE!
 
 ## How to use:
 
