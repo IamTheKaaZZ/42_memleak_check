@@ -6,7 +6,7 @@
 #    By: bcosters <bcosters@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/08 10:32:48 by bcosters          #+#    #+#              #
-#    Updated: 2021/02/28 14:10:28 by bcosters         ###   ########.fr        #
+#    Updated: 2021/09/20 11:24:33 by bcosters         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,12 @@
 
 #	Project sources/objects/headers
 
-SRCS	= malloc_leak_checker.c simple_debugs.c
-
-OBJS	= ${SRCS:.c=.o}
-
-HEADER	= simple_debugs.h
-
-NAME	= debugs.a
-
+SRCS	= ${wildcard *.c} 
+OBJS	= ${SRCS:%.c=obj/%.o}
+OBJDR	= obj/
+HEADER	= malloc_leak_checker.h
+NAME	= libmlc.a
 CC		= gcc
-
 CFLAGS 	= -Wall -Wextra -Werror
 
 # -*- Rules -*-
@@ -34,22 +30,32 @@ CFLAGS 	= -Wall -Wextra -Werror
 
 #	Implicit rules
 
-%.o : %.c
-			$(CC) -c $(CFLAGS) $< -o $@
+obj/%.o : %.c
+			@$(CC) -c $(CFLAGS) $< -o $@
+			@printf "#"
 
 #	Normal rules
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADER)
-			ar rcs $(NAME) $(OBJS)
+$(NAME):	$(OBJDR) $(OBJS) $(HEADER)
+			@ar rcs $(NAME) $(OBJS)
+			@printf "]\n"
+			@echo
+			@echo "Add the following flags to link the library:"
+			@echo "-lmlc -L /PathToThisRepo/"
+
+$(OBJDR):
+			@echo "Compiling library..."
+			@mkdir -p $(OBJDR)
+			@printf "["
 
 .PHONY:		clean
 
 clean:
-	rm -f ${OBJS}
+			@rm -rf ${OBJDR}
 
 fclean:		clean
-	rm -f ${NAME}
+			@rm -f ${NAME}
 
 re:			fclean all
