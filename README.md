@@ -1,4 +1,4 @@
-# Simpe memory leak checker for 42 students
+# Simple memory leak checker for 42 students
 
 This repo contains some simple but very helpful tools for debugging your code.
 
